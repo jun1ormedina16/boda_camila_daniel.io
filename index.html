@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camila & Daniel — 30 de Mayo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Tenor+Sans&family=EB+Garamond:ital@1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<audio id="bg-music" autoplay loop>
+  <source src="WhatsApp Audio 2026-02-14 at 12.17.09 PM.mpeg" type="audio/mpeg">
+</audio>
+
+
+
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Audio -->
+  <audio id="bg-audio" preload="auto">
+    <source src="Misterio__Lyric_Video_Oficial.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ─── ENVELOPE SCREEN ───────────────────────── -->
+  <div id="envelope-screen">
+    <div class="env-wrap">
+
+      <!-- Click hint ABOVE the envelope -->
+      <p class="env-hint">Toca el sobre para abrir</p>
+
+      <div class="envelope" id="envelope" onclick="openEnvelope()">
+        <div class="env-body-wrap">
+          <div class="env-body">
+
+            <!-- Base wine color -->
+            <div class="env-base"></div>
+
+            <!-- Fold shadows -->
+            <div class="env-fold-left"></div>
+            <div class="env-fold-right"></div>
+            <div class="env-fold-bottom"></div>
+
+            <!-- Gold border -->
+            <div class="env-gold-border"></div>
+
+            <!-- Gold corner ornaments -->
+            <div class="env-corner env-corner--tl">
+              <svg viewBox="0 0 28 28" fill="none">
+                <path d="M2 26 L2 2 L26 2" stroke="#C9A96E" stroke-width="1.5" opacity=".7" />
+                <circle cx="2" cy="2" r="1.5" fill="#C9A96E" opacity=".7" />
+              </svg>
+            </div>
+            <div class="env-corner env-corner--tr">
+              <svg viewBox="0 0 28 28" fill="none">
+                <path d="M2 26 L2 2 L26 2" stroke="#C9A96E" stroke-width="1.5" opacity=".7" />
+                <circle cx="2" cy="2" r="1.5" fill="#C9A96E" opacity=".7" />
+              </svg>
+            </div>
+            <div class="env-corner env-corner--bl">
+              <svg viewBox="0 0 28 28" fill="none">
+                <path d="M2 26 L2 2 L26 2" stroke="#C9A96E" stroke-width="1.5" opacity=".7" />
+                <circle cx="2" cy="2" r="1.5" fill="#C9A96E" opacity=".7" />
+              </svg>
+            </div>
+            <div class="env-corner env-corner--br">
+              <svg viewBox="0 0 28 28" fill="none">
+                <path d="M2 26 L2 2 L26 2" stroke="#C9A96E" stroke-width="1.5" opacity=".7" />
+                <circle cx="2" cy="2" r="1.5" fill="#C9A96E" opacity=".7" />
+              </svg>
+            </div>
+
+            <!-- Wax seal -->
+            <div class="env-seal">
+              <svg class="seal-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer glow ring -->
+                <circle cx="40" cy="40" r="38" fill="none" stroke="#C9A96E" stroke-width=".5" opacity=".4" />
+                <!-- Wax base with texture -->
+                <circle cx="40" cy="40" r="36" fill="#B8860B" />
+                <circle cx="40" cy="40" r="36" fill="url(#sealGrad)" />
+                <!-- Inner ring -->
+                <circle cx="40" cy="40" r="30" fill="none" stroke="#E8C870" stroke-width=".8" opacity=".6" />
+                <circle cx="40" cy="40" r="27" fill="none" stroke="#E8C870" stroke-width=".4" opacity=".4" />
+                <!-- Decorative star points -->
+                <path d="M40 10 L42 24 L40 22 L38 24Z" fill="#E8C870" opacity=".5" />
+                <path d="M40 70 L42 56 L40 58 L38 56Z" fill="#E8C870" opacity=".5" />
+                <path d="M10 40 L24 42 L22 40 L24 38Z" fill="#E8C870" opacity=".5" />
+                <path d="M70 40 L56 42 L58 40 L56 38Z" fill="#E8C870" opacity=".5" />
+                <!-- Monogram -->
+                <text x="40" y="36" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="13"
+                  fill="#FAF7F2" font-style="italic" font-weight="300">C &amp; D</text>
+                <text x="40" y="51" text-anchor="middle" font-family="Tenor Sans, sans-serif" font-size="6"
+                  fill="#E8C870" letter-spacing="3" opacity=".8">2026</text>
+                <defs>
+                  <radialGradient id="sealGrad" cx="35%" cy="35%">
+                    <stop offset="0%" stop-color="#D4A017" stop-opacity=".6" />
+                    <stop offset="60%" stop-color="#8B6914" stop-opacity=".2" />
+                    <stop offset="100%" stop-color="#5A3D08" stop-opacity=".8" />
+                  </radialGradient>
+                </defs>
+              </svg>
+            </div>
+
+            <!-- Animated flap -->
+            <div class="env-flap-wrap">
+              <div class="env-flap-front">
+                <div class="env-flap-crease"></div>
+              </div>
+              <div class="env-flap-back"></div>
+            </div>
+
+            <!-- Rising card on open -->
+            <div class="env-card-rise" id="envCard">
+              <div class="rise-card-inner">
+                <p
+                  style="font-family:'Tenor Sans',sans-serif;font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--wine-muted);margin-bottom:10px;">
+                  Nos casamos</p>
+                <p
+                  style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:var(--wine-dark);line-height:1.1;">
+                  Camila <span style="color:var(--gold);">&amp;</span> Daniel</p>
+                <p
+                  style="font-family:'Tenor Sans',sans-serif;font-size:9px;letter-spacing:.25em;color:var(--wine-muted);margin-top:10px;">
+                  30 · 05 · 2026</p>
+              </div>
+            </div>
+
+          </div><!-- env-body -->
+        </div><!-- env-body-wrap -->
+      </div><!-- envelope -->
+
+    </div>
+  </div>
+
+  <!-- ─── HERO ──────────────────────────────────── -->
+  <section class="hero" id="home">
+
+    <p class="hero-eyebrow">Nos casamos</p>
+
+    <div class="hero-divider">
+      <span></span>
+      <div class="diamond"></div>
+      <span></span>
+    </div>
+
+    <h1 class="hero-names">
+      <em>Camila</em>
+      <span class="hero-ampersand">&amp;</span>
+      <em>Daniel</em>
+    </h1>
+
+    <div class="hero-date-block">
+      <p class="hero-date">30 de Mayo 2026</p>
+      <span class="hero-year">Cota, Cundinamarca</span>
+    </div>
+
+    <blockquote class="hero-verse">
+      "El amor es sufrido, es benigno; el amor no tiene envidia, el amor no es jactancioso, no se envanece."
+      <cite>1 Corintios 13:4</cite>
+    </blockquote>
+
+
+  </section>
+
+
+  <!-- ─── COUNTDOWN ─────────────────────────────── -->
+  <section class="countdown-section">
+    <div class="section-inner reveal">
+      <p class="section-label">Faltan</p>
+      <h2 class="section-title">La cuenta <em>regresiva</em></h2>
+      <div class="sep">
+        <div class="sep-line"></div>
+        <span class="sep-star">✦</span>
+        <div class="sep-line"></div>
+      </div>
+      <div class="countdown-grid">
+        <div class="count-item">
+          <span class="count-num" id="cd-days">00</span>
+          <span class="count-label">Días</span>
+        </div>
+        <div class="count-sep">·</div>
+        <div class="count-item">
+          <span class="count-num" id="cd-hours">00</span>
+          <span class="count-label">Horas</span>
+        </div>
+        <div class="count-sep">·</div>
+        <div class="count-item">
+          <span class="count-num" id="cd-mins">00</span>
+          <span class="count-label">Minutos</span>
+        </div>
+        <div class="count-sep">·</div>
+        <div class="count-item">
+          <span class="count-num" id="cd-secs">00</span>
+          <span class="count-label">Segundos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── DETAILS ───────────────────────────────── -->
+  <section class="details-section">
+    <div class="section-inner reveal">
+      <p class="section-label">Detalles del evento</p>
+      <h2 class="section-title">Todo lo que <em>necesitas saber</em></h2>
+      <div class="sep">
+        <div class="sep-line"></div>
+        <span class="sep-star">✦</span>
+        <div class="sep-line"></div>
+      </div>
+    </div>
+    <div style="max-width:1000px; margin:0 auto; padding:0 20px;">
+      <div class="details-cards reveal">
+        <div class="detail-card">
+          <span class="detail-icon">📅</span>
+          <p class="detail-card-title">Fecha</p>
+          <p class="detail-card-text">Sábado 30 de Mayo 2026</p>
+          <p class="detail-card-sub">Donde empieza nuestro para siempre.</p>
+        </div>
+        <div class="detail-card">
+          <span class="detail-icon">⏰</span>
+          <p class="detail-card-title">Hora</p>
+          <p class="detail-card-text">3:00 PM</p>
+          <p class="detail-card-sub">Llega puntual… ¡no queremos empezar sin ti!</p>
+        </div>
+        <div class="detail-card">
+          <span class="detail-icon">📍</span>
+          <p class="detail-card-title">Lugar</p>
+          <p class="detail-card-text">Salón El Darién</p>
+          <p class="detail-card-sub">Cota, Cundinamarca</p>
+        </div>
+        <div class="detail-card">
+          <span class="detail-icon">👗</span>
+          <p class="detail-card-title">Dresscode</p>
+          <p class="detail-card-text">Elegante Formal</p>
+          <p class="detail-card-sub">Por favor evitar blanco, vinotinto y rojo. ¡Ayúdanos a brillar!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── VERSE BREAK ───────────────────────────── -->
+  <section class="verse-break with-bg">
+    <div class="section-inner reveal">
+      <blockquote class="big-verse">
+        "Y sobre todas estas cosas vestíos de amor, que es el vínculo perfecto."
+        <cite>Colosenses 3:14</cite>
+      </blockquote>
+    </div>
+  </section>
+
+
+  <!-- ─── CHILDREN + SOBRES ─────────────────────── -->
+  <section class="children-section">
+    <div class="duo-row reveal">
+
+      <!-- Velada para adultos -->
+      <div class="children-card">
+        <h3 class="children-title">Una velada para adultos</h3>
+        <p class="children-text">
+          Hemos diseñado esta celebración como un espacio íntimo para adultos.<br><br>
+          Con todo el amor y la comprensión del mundo, les pedimos amablemente
+          <strong style="font-style:normal; color:var(--wine-dark);">no traer niños</strong>
+          a la ceremonia ni a la recepción.<br><br>
+          ¡Aprovecha esta noche especial para disfrutar sin preocupaciones!
+        </p>
+      </div>
+
+      <!-- Lluvia de sobres -->
+      <div class="sobres-mini-card">
+        <!-- Baúl SVG -->
+        <svg class="baul-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="28" width="56" height="30" rx="2" fill="#4A0F1C" />
+          <rect x="4" y="28" width="56" height="30" rx="2" stroke="#C9A96E" stroke-width="1" />
+          <path d="M4 28 Q4 14 32 14 Q60 14 60 28Z" fill="#6B1A2A" stroke="#C9A96E" stroke-width="1" />
+          <path d="M10 27 Q10 20 32 20 Q54 20 54 27" stroke="#C9A96E" stroke-width=".5" opacity=".5" />
+          <rect x="4" y="38" width="56" height="5" fill="#5A1522" stroke="#C9A96E" stroke-width=".5" />
+          <rect x="26" y="34" width="12" height="9" rx="1" fill="#C9A96E" />
+          <circle cx="32" cy="37" r="2" fill="#4A0F1C" />
+          <rect x="31" y="37" width="2" height="3" rx=".5" fill="#4A0F1C" />
+          <circle cx="10" cy="32" r="2" fill="#C9A96E" />
+          <circle cx="54" cy="32" r="2" fill="#C9A96E" />
+          <circle cx="10" cy="52" r="2" fill="#C9A96E" />
+          <circle cx="54" cy="52" r="2" fill="#C9A96E" />
+          <rect x="24" y="10" width="16" height="11" rx="1" fill="#FAF7F2" stroke="#C9A96E" stroke-width=".8" />
+          <path d="M24 11 L32 16 L40 11" stroke="#C9A96E" stroke-width=".8" fill="none" />
+        </svg>
+        <p class="sobres-mini-title">Lluvia de sobres</p>
+        <p class="sobres-mini-text">
+          No necesitamos nada…<br>
+          <em>¡pero un sobrecito nunca estorba!</em>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+    <div class="form-center">
+  <iframe
+    src="https://docs.google.com/forms/d/e/1FAIpQLScEM1q1umhNYNvzU23E3BrZtHjCMqkwnUry2ANEyW-sqQq0tg/viewform?embedded=true"
+    width="640"
+    height="927"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0">
+    Cargando…
+  </iframe>
+</div>
+
+
+
+  <!-- ─── FOOTER ────────────────────────────────── -->
+  <footer>
+    <p class="footer-names">Camila &amp; Daniel</p>
+    <p class="footer-date">30 · 05 · 2026 · Cota, Cundinamarca</p>
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
