@@ -694,7 +694,7 @@
       color: var(--cream); font-family: 'Tenor Sans', sans-serif;
       font-size: 14px; outline: none;
       transition: border-color .3s;
-      -webkit-appearance: none;
+
     }
     .form-group input::placeholder,
     .form-group textarea::placeholder { color: rgba(250,247,242,.35); }
