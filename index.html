@@ -13,17 +13,16 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<audio id="bg-music" autoplay loop>
-  <source src="musica.mp3" type="audio/mp3">
-</audio>
-
 <body>
 
   <!-- Cursor -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
-
+  <!-- Audio -->
+  <audio id="bg-audio" preload="auto">
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
 
   <!-- ─── ENVELOPE SCREEN ───────────────────────── -->
   <div id="envelope-screen">
@@ -298,20 +297,21 @@
     </div>
   </section>
 
-    <div class="form-center">
-  <iframe
-    src="https://docs.google.com/forms/d/e/1FAIpQLScEM1q1umhNYNvzU23E3BrZtHjCMqkwnUry2ANEyW-sqQq0tg/viewform?embedded=true"
-    width="640"
-    height="927"
-    frameborder="0"
-    marginheight="0"
-    marginwidth="0">
-    Cargando…
-  </iframe>
+    
+
+<!-- ─── CONFIRMAR ASISTENCIA ─────────────────── -->
+<div class="whatsapp reveal">
+  <h2>Confirma tu asistencia</h2>
+
+  <a 
+    href="https://wa.me/573197111615?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20boda%2C%20all%C3%A1%20nos%20vemos..."
+    target="_blank"
+    class="whatsapp-btn">
+    Confirmar asistencia
+  </a>
 </div>
 
-
-
+    
   <!-- ─── FOOTER ────────────────────────────────── -->
   <footer>
     <p class="footer-names">Camila &amp; Daniel</p>

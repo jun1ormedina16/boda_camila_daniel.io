@@ -60,6 +60,45 @@
     }
     @keyframes pulse { 0%,100%{opacity:.45} 50%{opacity:1} }
 
+    audio {
+  display: none;
+}
+
+.whatsapp{
+  text-align:center;
+  padding:120px 20px;
+}
+
+.whatsapp h2{
+  font-family:'Cormorant Garamond', serif;
+  font-weight:300;
+  font-size:32px;
+  color:var(--wine-dark);
+  margin-bottom:50px;
+}
+
+.whatsapp-btn{
+  display:inline-block;
+  padding:16px 45px;
+  font-family:'Tenor Sans', sans-serif;
+  font-size:12px;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  text-decoration:none;
+  background:transparent;
+  color:var(--wine-dark);
+  border:1px solid var(--gold);
+  border-radius:50px;
+  transition:all .4s ease;
+}
+
+.whatsapp-btn:hover{
+  background:var(--wine-dark);
+  color:#fff;
+  transform:translateY(-3px);
+}
+
+
     /* ── Envelope outer wrapper ── */
     .envelope {
       width: min(420px, 90vw);
@@ -694,7 +733,7 @@
       color: var(--cream); font-family: 'Tenor Sans', sans-serif;
       font-size: 14px; outline: none;
       transition: border-color .3s;
-
+      webkit-appearance: none;
     }
     .form-group input::placeholder,
     .form-group textarea::placeholder { color: rgba(250,247,242,.35); }
